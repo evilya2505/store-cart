@@ -16,3 +16,10 @@
     font-size: 16px !important;
   }
 }
+
+@media only screen and (max-width: 760px) {
+  .paper {
+    padding: 5px;
+    flex-direction: column !important;
+  }
+}
