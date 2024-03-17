@@ -55,7 +55,23 @@
     max-width: 200px;
   }
 
+  .titleExpanded {
+    white-space: normal;
+  }
+
+  .title:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+  }
+
   .tableCell {
     padding: 5px !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .description {
+    font-size: 14px;
+
+    max-width: 200px;
   }
 }

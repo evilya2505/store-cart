@@ -23,6 +23,7 @@ const ProductRow: React.FC<IProductRowProps> = ({ product }): JSX.Element => {
   const dispatch = useDispatch();
   const [isDescriptionExpanded, setDescriptionExpanded] =
     useState<boolean>(false);
+  const [isTitleExpanded, setTitleExpanded] = useState<boolean>(false);
 
   function onDelete() {
     dispatch(removeItemFromCart(product.id));
@@ -30,6 +31,10 @@ const ProductRow: React.FC<IProductRowProps> = ({ product }): JSX.Element => {
 
   const toggleDescription = () => {
     setDescriptionExpanded(!isDescriptionExpanded);
+  };
+
+  const toggleTitle = () => {
+    setTitleExpanded(!isTitleExpanded);
   };
 
   return (
@@ -49,7 +54,13 @@ const ProductRow: React.FC<IProductRowProps> = ({ product }): JSX.Element => {
           className={productRowStyles.image}
         />
         <div>
-          <Typography variant="h6" className={productRowStyles.title}>
+          <Typography
+            variant="h6"
+            onClick={toggleTitle}
+            className={`${productRowStyles.title} ${
+              isTitleExpanded && productRowStyles.titleExpanded
+            }`}
+          >
             {product.title}
           </Typography>
           <Typography
