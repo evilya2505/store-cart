@@ -51,7 +51,6 @@ const Counter: React.FC<ICounterProps> = ({ id, count }): JSX.Element => {
           },
           padding: "0px",
         }}
-        id="count"
         variant="standard"
         value={count}
         inputProps={{ readOnly: true }}

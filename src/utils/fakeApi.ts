@@ -1,9 +1,10 @@
 import { TProduct } from "./types";
 import productsData from "../utils/products.json";
 
+// Добавление к мок-данным поля count, примерный перевод цены в рубли и округление в большую сторону
 const productsWithCount = productsData.map((product) => ({
   ...product,
-  price: Number(product.price.toFixed(0)),
+  price: Math.ceil(product.price * 90),
   count: 1,
 }));
 

@@ -10,7 +10,7 @@ const Main: React.FC<IMainProps> = (): JSX.Element => {
 
   return (
     <main>
-      <Typography className={mainStyles.title} variant="h3" gutterBottom>
+      <Typography className={mainStyles.title} variant="h4" gutterBottom>
         Корзина
       </Typography>
       <Grid container spacing={2}>
@@ -21,11 +21,11 @@ const Main: React.FC<IMainProps> = (): JSX.Element => {
         </Grid>
         <Grid item xs={3}>
           <Paper className={mainStyles.paper}>
-            <Typography className={mainStyles.price} variant="h5">
+            <Typography className={mainStyles.price} variant="h6">
               Итого:
             </Typography>
-            <Typography className={mainStyles.price} variant="h5">
-              {(total * 90).toFixed(0)}&nbsp;руб.
+            <Typography className={mainStyles.price} variant="h6">
+              {total}&nbsp;руб.
             </Typography>
           </Paper>
         </Grid>

@@ -45,9 +45,21 @@ const CartTable: React.FC<ICartTableProps> = (): JSX.Element => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {products.map((product) => (
-            <ProductRow product={product} />
-          ))}
+          {products.length > 0 ? (
+            <>
+              {products.map((product) => (
+                <ProductRow key={product.id} product={product} />
+              ))}
+            </>
+          ) : (
+            <TableRow>
+              <TableCell padding="none" className={cartTableStyles.cell}>
+                <Typography variant="body1" className={cartTableStyles.text}>
+                  Корзина пуста
+                </Typography>
+              </TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </TableContainer>

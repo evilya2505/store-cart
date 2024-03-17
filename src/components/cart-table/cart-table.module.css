@@ -1,8 +1,9 @@
 .cell {
-  padding: 15px;
+  padding: 15px !important;
 }
+
 @media only screen and (max-width: 1200px) {
   .cell {
-    padding: 5px;
+    padding: 5px !important;
   }
 }

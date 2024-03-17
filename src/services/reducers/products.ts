@@ -65,7 +65,7 @@ const productsSlice = createSlice({
     ) {
       const product = state.products.find((p) => p.id === action.payload);
 
-      if (product) product.count -= 1;
+      if (product) state.totalSum -= product.price * product.count;
 
       state.products = state.products.filter((p) => p.id !== action.payload);
     },

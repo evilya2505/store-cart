@@ -75,9 +75,7 @@ const ProductRow: React.FC<IProductRowProps> = ({ product }): JSX.Element => {
         align="right"
         className={productRowStyles.tableCell}
       >
-        <Typography variant="body1">
-          {(product.price * 90).toFixed(0)}&nbsp;&#8381;
-        </Typography>
+        <Typography variant="body1">{product.price}&nbsp;&#8381;</Typography>
       </TableCell>
       <TableCell padding="none" className={productRowStyles.tableCell}>
         <Tooltip title="Удалить">
