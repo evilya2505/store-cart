@@ -1,8 +1,14 @@
-import productsData from "../utils/products.json";
 import { TProduct } from "./types";
+import productsData from "../utils/products.json";
+
+const productsWithCount = productsData.map((product) => ({
+  ...product,
+  price: Number(product.price.toFixed(0)),
+  count: 1,
+}));
 
 const fakeDatabase: { products: TProduct[] } = {
-  products: productsData,
+  products: productsWithCount,
 };
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));

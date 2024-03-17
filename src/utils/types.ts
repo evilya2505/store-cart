@@ -11,4 +11,5 @@ export type TProduct = {
   category: string;
   image: string;
   rating: TRating;
+  count: number;
 };

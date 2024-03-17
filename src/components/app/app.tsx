@@ -1,12 +1,22 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "../../services/hooks";
+import { getProducts } from "../../services/actions/products";
+import Main from "../main/main";
 import appStyles from "./app.module.css";
-import fakeApi from "../../utils/fakeApi";
 
 function App() {
+  const dispatch = useDispatch();
+
+  // Получение товаров
   useEffect(() => {
-    fakeApi.getProducts().then((res) => console.log(res));
-  }, []);
-  return <div className="App"></div>;
+    dispatch(getProducts());
+  }, [dispatch]);
+
+  return (
+    <div className={appStyles.app}>
+      <Main />
+    </div>
+  );
 }
 
 export default App;
